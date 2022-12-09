@@ -25,7 +25,7 @@ export default function Home({ allData }) {
           <div>
          {allData.map(({id, title, type} ) => 
          <section key={id} className='container mb-4'>
-         <ul>
+         <ul className='row'>
          <li>The {type}&apos;s id: <strong>{id}</strong></li>
          <li>The {type}&apos;s name: <strong>{title}</strong></li>
          <li className={type}><strong>Category: {(type.charAt(0).toUpperCase())+(type.slice(1))}</strong></li>
