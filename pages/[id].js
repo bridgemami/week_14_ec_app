@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
     props: {
       itemData
     },
-    revalidate: 60
+    revalidate: 20
   };
 }
 
@@ -35,13 +35,18 @@ export default function Entry({ itemData }) {
   return (
     <>
     <h1 className='text-center mt-2'>Details</h1>
-      <article className="container border border-secondary pb-3">
+      <article className="container border border-secondary pb-3 ps-4">
         <section className="row">
-          <h5 className="col-12 pt-2">{itemData[0].post_title}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">{itemData.post_content}</h6>
-          <p className='card-text'>{basic[2]}</p>
-          <p className='card-text'>{basic[4]}</p>
-          <div className="card-text" dangerouslySetInnerHTML={{__html: itemData[0].post_content}} />
+          <h5 className="col-12 pt-2 ps-2">{(itemData[0].post_type.charAt(0).toUpperCase())+(itemData[0].post_type.slice(1))} ID: {itemData[0].ID}</h5>
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[0]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[1]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[2]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[3]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[4]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[5]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[6]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[7]}} />
+          <p className="card-text"  dangerouslySetInnerHTML={{__html: basic[8]}} />
           </section>
           <button type="button" className="btn btn-secondary width_10 mt-3">
             <Link href='/'>

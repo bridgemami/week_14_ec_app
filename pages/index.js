@@ -15,7 +15,7 @@ export async function getStaticProps() {
       //  allData: allData,
       allData
     },
-    revalidate: 60
+    revalidate: 20
   }
 }
 export default function Home({ allData }) {
@@ -24,7 +24,7 @@ export default function Home({ allData }) {
             <h1 className="text-center mb-4">The List</h1>
           <div>
          {allData.map(({id, title, type} ) => 
-         <section key={id} className='container mb-4'>
+         <section className='container mb-4' key={id}>
          <ul className='row'>
          <li>The {type}&apos;s id: <strong>{id}</strong></li>
          <li>The {type}&apos;s name: <strong>{title}</strong></li>
